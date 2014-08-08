@@ -18,3 +18,7 @@ composer install --dev
 echo 'Migrating Database'
 php artisan migrate --seed --env=local
 php artisan migrate --env=testing
+echo 'Install NPM dependencies'
+npm install
+echo 'Compiling CSS'
+gulp css
