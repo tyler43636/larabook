@@ -3,6 +3,9 @@
 ### [Laracasts][4]
 I've been following along the Laracasts ["Build Larabook from scratch series"][3]. I've posted my code here for anyone who gets stuck.
 
+### Progress
+The codebase is currently at lession 22.
+
 ### Setup
 1) Install [Vagrant][1] and [VirtualBox][2]
 2) Clone this repository
@@ -19,8 +22,6 @@ I've been following along the Laracasts ["Build Larabook from scratch series"][3
 ### Development
 1) ssh into the VM. The easiest way is to run the 'vagrant ssh' command from the root directory of the project
 2) Run the 'gulp' command to compile the css
-
-
 
   [1]: http://downloads.vagrantup.com/  
   [2]: https://www.virtualbox.org/wiki/Downloads  
