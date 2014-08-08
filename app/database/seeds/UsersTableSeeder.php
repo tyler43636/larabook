@@ -1,0 +1,22 @@
+<?php
+
+use Faker\Factory as Faker;
+use Larabook\Users\User;
+
+class UsersTableSeeder extends Seeder {
+
+	public function run()
+	{
+		$faker = Faker::create();
+
+		foreach(range(1, 30) as $index)
+		{
+			User::create([
+                'username' => $faker->name . $index,
+                'email' => $faker->email . $index,
+                'password' => 'secret'
+			]);
+		}
+	}
+
+}
