@@ -34,7 +34,7 @@ class StatusesController extends \BaseController {
 	 */
 	public function index()
 	{
-        $statuses = $this->statusRepository->getAllForUser(Auth::user());
+        $statuses = $this->statusRepository->getFeedForUser(Auth::user());
 
         $userId = Auth::user()->id;
 

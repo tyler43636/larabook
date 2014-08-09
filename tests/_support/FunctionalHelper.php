@@ -1,5 +1,6 @@
 <?php namespace Codeception\Module;
 
+use Artisan;
 use Laracasts\TestDummy\Factory as TestDummy;
 
 // here you can define custom actions

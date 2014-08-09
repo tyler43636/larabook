@@ -46,8 +46,13 @@ Route::get('users', [
     'as' => 'users',
     'uses' => 'UsersController@index'
 ]);
-
 Route::get('@{username}', [
     'as' => 'profile',
     'uses' => 'UsersController@show'
+]);
+
+/** Follows */
+Route::post('follows', [
+    'as' => 'follows',
+    'uses' => 'FollowsController@store'
 ]);

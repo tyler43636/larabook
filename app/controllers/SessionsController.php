@@ -33,17 +33,18 @@ class SessionsController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
+    {
         $formData = Input::only('email', 'password');
         $this->signInForm->validate($formData);
 
-        if(Auth::attempt($formData))
-        {
-            Flash::message('Welcome Back!');
-            return Redirect::intended('/statuses');
+        if (!Auth::attempt($formData)) {
+            Flash::error('WRONG USERNAME OR PASSWORD!,<small>please try again</small>');
+            return Redirect::back()->withInput();
         }
-	}
 
+        Flash::message('Welcome Back!');
+        return Redirect::intended('statuses');
+    }
 
 	/**
 	 * Log user out of Larabook
