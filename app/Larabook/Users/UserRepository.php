@@ -54,4 +54,14 @@ class UserRepository {
     {
         $user->follows()->attach($userIdToFollow);
     }
+
+    /**
+     * Unfollow a Larabook user
+     * @param User $user
+     * @param $userIdToUnfollow
+     */
+    public function unfollow(User $user, $userIdToUnfollow)
+    {
+        $user->follows()->detach($userIdToUnfollow);
+    }
 }

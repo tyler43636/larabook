@@ -1,20 +1,29 @@
 @extends('layouts.default')
 @section('content')
-<div class="col-md-3">
+<div class="row">
+    <div class="col-md-4">
+        <div class="media">
+            <div class="pull-left">
+                @include('layouts.partials.avatar', ['size' => 50])
+            </div>
+            <div class="media-body">
+                <h1 class="media-heading">{{ $user->username }}</h1>
+                <p>{{ $user->statuses()->count() }}</p>
+            </div>
+            @unless($user->is($currentUser))
+                @include('users.forms.follow-form')
+            @endif
+        </div>
+    </div>
 
-    <h1>{{ $user->username }}</h1>
+    <div class="col-md-6">
 
-    @include('layouts.partials.avatar', ['size' => 100])
+        @if($user->is($currentUser))
+            @include('statuses.partials.publish-status-form')
+        @endif
 
-    @include('users.forms.follow-form')
-</div>
-<div class="col-md-6">
+        @include('statuses.partials.statuses', ['statuses' => $user->statuses])
 
-    @if($user->is($currentUser))
-        @include('statuses.partials.publish-status-form')
-    @endif
-
-    @include('statuses.partials.statuses', ['statuses' => $user->statuses])
-
+    </div>
 </div>
 @stop
