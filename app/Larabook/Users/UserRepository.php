@@ -52,8 +52,9 @@ class UserRepository {
      */
     public function follow(User $user, $userIdToFollow)
     {
-        $user->follows()->attach($userIdToFollow);
+        $user->followedUsers()->attach($userIdToFollow);
     }
+
 
     /**
      * Unfollow a Larabook user
@@ -62,6 +63,6 @@ class UserRepository {
      */
     public function unfollow(User $user, $userIdToUnfollow)
     {
-        $user->follows()->detach($userIdToUnfollow);
+        $user->followedUsers()->detach($userIdToUnfollow);
     }
 }

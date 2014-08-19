@@ -4,7 +4,7 @@
 I've been following along the Laracasts ["Build Larabook from scratch series"][3]. I've posted my code here for anyone who gets stuck.
 
 ### Progress
-The codebase is currently at lession 24.
+The codebase is currently at lession 25.
 
 ### Setup
 1) Install [Vagrant][1] and [VirtualBox][2]

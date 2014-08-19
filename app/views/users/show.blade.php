@@ -8,15 +8,21 @@
             </div>
             <div class="media-body">
                 <h1 class="media-heading">{{ $user->username }}</h1>
-                <p>{{ $user->statuses()->count() }}</p>
+                <ul class="list-inline text-muted">
+                    <li>{{ $user->present()->statusCount() }}</li>
+                    <li>{{ $user->present()->followerCount() }}</li>
+                </ul>
+                @foreach($user->followers as $follower)
+                    @include('layouts.partials.avatar', ['size' => 50, 'user' => $follower])
+                @endforeach
             </div>
-            @unless($user->is($currentUser))
-                @include('users.forms.follow-form')
-            @endif
         </div>
     </div>
 
     <div class="col-md-6">
+        @unless($user->is($currentUser))
+            @include('users.forms.follow-form')
+        @endif
 
         @if($user->is($currentUser))
             @include('statuses.partials.publish-status-form')

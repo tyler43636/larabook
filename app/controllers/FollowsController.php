@@ -27,11 +27,10 @@ class FollowsController extends \BaseController {
     /**
      * Unfollow a user
      *
-     * @param $userIdToUnfollow
      * @internal param $idOfUserToUnfollow
      * @return Response
      */
-	public function destroy($userIdToUnfollow)
+	public function destroy()
 	{
         $input = array_add(Input::get(), 'userId', Auth::id());
 

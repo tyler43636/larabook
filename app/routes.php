@@ -56,7 +56,7 @@ Route::post('follows', [
     'as' => 'follows',
     'uses' => 'FollowsController@store'
 ]);
-Route::delete('follows/{userIdToUnfollow}', [
+Route::delete('follows/', [
     'as' => 'follows',
     'uses' => 'FollowsController@destroy'
 ]);

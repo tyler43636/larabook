@@ -1,6 +1,5 @@
 @if($user->isFollowedBy($currentUser))
-    {{ Form::open(['method' => 'DELETE',
-        'route' => ['follows', $user->id] ]) }}
+    {{ Form::open(['method' => 'DELETE', 'route' => ['follows', $user->id] ]) }}
         {{ Form::hidden('userIdToUnfollow', $user->id) }}
         <button type="submit" class="btn btn-danger">Unfollow {{ $user->username }}</button>
     {{ Form::close() }}
