@@ -123,7 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
-        'Laracasts\Flash\FlashServiceProvider'
+        'Laracasts\Flash\FlashServiceProvider',
+        'Larabook\Providers\EventServiceProvider'
 	),
 
 	/*
