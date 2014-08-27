@@ -10,4 +10,23 @@
     </p>
     @endif
 </div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-user pull-left"></span>
+            <p>Follow other Users!</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    <div class="well well-lg">
+        <span class="glyphicon glyphicon-user pull-left marketing-icon"></span>
+        <p>Follow other Users!</p>
+    </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
 @stop

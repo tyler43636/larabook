@@ -1,6 +1,8 @@
 <?php
 
 /** Pages */
+use Larabook\Statuses\Status;
+
 Route::get('/', [
     'as' => 'home',
     'uses' => 'PagesController@home'
@@ -60,4 +62,13 @@ Route::delete('follows/', [
     'as' => 'follows',
     'uses' => 'FollowsController@destroy'
 ]);
+
+Route::get('test', ['as' => 'test', function () {
+
+    $allUsers = Cache::remember('everything', 1440, function () {
+        return Status::all();
+    });
+
+    return Response::json($allUsers->toArray());
+}]);
 

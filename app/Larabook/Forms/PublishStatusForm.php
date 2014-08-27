@@ -12,4 +12,4 @@ class PublishStatusForm  extends FormValidator {
         'body' => 'required'
     ];
 
-} 
+}
