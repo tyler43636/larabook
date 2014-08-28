@@ -1,4 +1,17 @@
+.larabook-jumbotron {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
 .marketing-icon {
   font-size: 10em;
-  clear: inherit;
+  width: 100%;
+}
+
+.marketing-well {
+  text-align: center;
+
+  p {
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+  }
 }
