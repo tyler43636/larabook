@@ -5,10 +5,15 @@ mysql --user=root --password=root --execute="CREATE DATABASE IF NOT EXISTS larab
 
 cd /vagrant/
 # Install composer dependencies
-composer install
+#composer install
+
 # Install NPM dependencies
-npm install
+NPM=`which npm`
+$NPM install
+
 # migrate and seed database
 php artisan migrate --seed
+
 # compile css
-gulp css
+GULP=`which gulp`
+$GULP css

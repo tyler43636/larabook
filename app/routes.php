@@ -1,8 +1,6 @@
 <?php
 
 /** Pages */
-use Larabook\Statuses\Status;
-
 Route::get('/', [
     'as' => 'home',
     'uses' => 'PagesController@home'
@@ -33,6 +31,9 @@ Route::get('logout',[
     'uses' => 'SessionsController@destroy'
 ]);
 
+/** Password Reminders */
+Route::controller('password', 'RemindersController');
+
 /** Statuses */
 Route::get('statuses', [
     'as' => 'statuses',
@@ -62,13 +63,4 @@ Route::delete('follows/', [
     'as' => 'follows',
     'uses' => 'FollowsController@destroy'
 ]);
-
-Route::get('test', ['as' => 'test', function () {
-
-    $allUsers = Cache::remember('everything', 1440, function () {
-        return Status::all();
-    });
-
-    return Response::json($allUsers->toArray());
-}]);
 

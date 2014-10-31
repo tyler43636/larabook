@@ -28,7 +28,7 @@ return array(
     |
     */
 
-    'host' => 'localhost',
+    'host' => '127.0.0.1',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,5 +42,18 @@ return array(
     */
 
     'port' => 1025,
+
+    /*
+    |--------------------------------------------------------------------------
+    | E-Mail Encryption Protocol
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the encryption protocol that should be used when
+    | the application send e-mail messages. A sensible default using the
+    | transport layer security protocol should provide great security.
+    |
+    */
+
+    'encryption' => null,
 
 );

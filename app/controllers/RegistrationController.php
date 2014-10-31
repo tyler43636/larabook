@@ -96,7 +96,7 @@ class RegistrationController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		
 	}
 
 
