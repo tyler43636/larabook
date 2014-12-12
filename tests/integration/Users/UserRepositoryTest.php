@@ -20,7 +20,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_paginates_all_users()
+    public function paginateAllUsers()
     {
         TestDummy::times(4)->create('Larabook\Users\User');
 
@@ -30,7 +30,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_finds_a_user_with_statuses_by_username()
+    public function findUserByUsernameWithStatuses()
     {
         // Given
         $statuses = TestDummy::times(3)->create('Larabook\Statuses\Status');
@@ -45,7 +45,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_follows_another_user()
+    public function followAnotherUser()
     {
         // I have 2 users
         list($john, $susan) = TestDummy::times(2)->create('Larabook\Users\User');
@@ -63,7 +63,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_unfollows_another_user()
+    public function unfollowAUser()
     {
         // I have 2 users
         list($john, $susan) =  TestDummy::times(2)->create('Larabook\Users\User');

@@ -20,7 +20,7 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_gets_all_statuses_for_a_user()
+    public function getAllStatusesForAUser()
     {
         // Given I have 2 users
         $users = TestDummy::times(2)->create('Larabook\Users\User');
@@ -42,7 +42,7 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_saves_a_status_for_a_user()
+    public function saveAStatusForAUser()
     {
         // Given I have an unsaved status
         $status = TestDummy::create('Larabook\Statuses\Status',[
