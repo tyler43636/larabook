@@ -15,7 +15,7 @@ The codebase is currently at lession 28.
 6) Open your browser and load 'http://larabook.app'
 
 ### Tests
-1) ssh into the VM. The easiest way is to run the 'vagrant ssh' command from the root directory of the project
+1) ssh into the VM by running the 'vagrant ssh' command from the root directory of the project
 2) cd to '/vagrant'
 3) Run 'vendor/bin/codecept run'
 
