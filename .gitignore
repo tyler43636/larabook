@@ -2,6 +2,7 @@
 /vendor
 /node_modules
 /.vagrant
+/.phpcomplete_extended
 /public/css/main.css
 composer.phar
 .env.*.php
