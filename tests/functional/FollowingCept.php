@@ -2,7 +2,7 @@
 $I = new FunctionalTester($scenario);
 
 $I->am('a Larabook user.');
-$I->wantTo('follow other users.');
+$I->wantTo('Follow other users.');
 
 // setup
 $I->haveAnAccount(['username' => 'OtherUser']);
