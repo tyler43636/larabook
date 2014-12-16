@@ -1,5 +1,5 @@
 ## [Larabook - Laracasts Series][1]
-
+[![build status](https://ci.tylerpayne.com/projects/6/status.png?ref=master)](https://ci.tylerpayne.com/projects/6?ref=master)
 ### [Laracasts][4]
 I've been following along the Laracasts ["Build Larabook from scratch series"][3]. I've posted my code here for anyone who gets stuck.
 
