@@ -20,7 +20,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_paginates_all_users()
+    public function paginateAllUsers()
     {
         TestDummy::times(4)->create('Larabook\Users\User');
 
@@ -30,7 +30,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     }
 
     /** @test */
-    public function it_finds_a_user_with_statuses_by_username()
+    public function findUserByUsernameWithStatuses()
     {
         // Given
         $statuses = TestDummy::times(3)->create('Larabook\Statuses\Status');
@@ -42,5 +42,46 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
         // Then
         $this->assertEquals($username, $user->username);
         $this->assertCount(3, $user->statuses);
+    }
+
+    /** @test */
+    public function followAnotherUser()
+    {
+        // I have 2 users
+        list($john, $susan) = TestDummy::times(2)->create('Larabook\Users\User');
+
+        // and one user follows another user
+        $this->repo->follow($john, $susan->id);
+
+        // I should see the user in the list of users followed
+        $this->assertCount(1, $john->followedUsers);
+        $this->assertTrue($john->followedUsers->contains($susan->id));
+        $this->tester->seeRecord('follows', [
+            'follower_id' => $john->id,
+            'followed_id' => $susan->id
+        ]);
+    }
+
+    /** @test */
+    public function unfollowAUser()
+    {
+        // I have 2 users
+        list($john, $susan) =  TestDummy::times(2)->create('Larabook\Users\User');
+
+        // and one user follows another user
+        $this->repo->follow($john, $susan->id);
+        $this->tester->seeRecord('follows', [
+            'follower_id' => $john->id,
+            'followed_id' => $susan->id
+        ]);
+
+        // when I unfollow a user
+        $this->repo->unfollow($john, $susan->id);
+
+        // I should see the user in the list of users followed
+        $this->tester->dontSeeRecord('follows', [
+            'follower_id' => $john->id,
+            'followed_id' => $susan->id
+        ]);
     }
 }

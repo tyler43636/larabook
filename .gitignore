@@ -2,6 +2,7 @@
 /vendor
 /node_modules
 /.vagrant
+/.phpcomplete_extended
 /public/css/main.css
 composer.phar
 .env.*.php
@@ -9,5 +10,5 @@ composer.phar
 .DS_Store
 Thumbs.db
 tests/_output/*
-_ide_helper.php
+_ide_helper*
 .idea

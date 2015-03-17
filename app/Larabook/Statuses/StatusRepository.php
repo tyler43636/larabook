@@ -4,6 +4,11 @@ use Larabook\Users\User;
 
 class StatusRepository {
 
+    /**
+     * Grab all a user's statuses
+     * @param User $user
+     * @return mixed
+     */
     public function getAllForUser(User $user)
     {
         return $user
@@ -33,7 +38,7 @@ class StatusRepository {
      */
     public function getFeedForUser(User $user)
     {
-        $userIds = $user->follows()->lists('followed_id');
+        $userIds = $user->followedUsers()->lists('followed_id');
 
         $userIds[] = $user->id;
 

@@ -15,6 +15,7 @@
             </div>
             <div class="form-group">
                 {{ Form::submit('Sign In', ['class' => 'btn btn-primary btn-lg']) }}
+                {{ link_to_action('RemindersController@getRemind', 'Forgot Password?', null, ['class' => 'btn btn-default btn-lg']) }}
             </div>
         {{ Form::close() }}
     </div>

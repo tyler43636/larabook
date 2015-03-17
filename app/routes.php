@@ -31,6 +31,9 @@ Route::get('logout',[
     'uses' => 'SessionsController@destroy'
 ]);
 
+/** Password Reminders */
+Route::controller('password', 'RemindersController');
+
 /** Statuses */
 Route::get('statuses', [
     'as' => 'statuses',
@@ -56,3 +59,8 @@ Route::post('follows', [
     'as' => 'follows',
     'uses' => 'FollowsController@store'
 ]);
+Route::delete('follows/', [
+    'as' => 'follows',
+    'uses' => 'FollowsController@destroy'
+]);
+

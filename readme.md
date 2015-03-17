@@ -1,10 +1,10 @@
 ## [Larabook - Laracasts Series][1]
-
+[![build status](https://ci.tylerpayne.com/projects/6/status.png?ref=master)](https://ci.tylerpayne.com/projects/6?ref=master)
 ### [Laracasts][4]
 I've been following along the Laracasts ["Build Larabook from scratch series"][3]. I've posted my code here for anyone who gets stuck.
 
 ### Progress
-The codebase is currently at lession 24.
+The codebase is currently at lession 28.
 
 ### Setup
 1) Install [Vagrant][1] and [VirtualBox][2]
@@ -15,12 +15,12 @@ The codebase is currently at lession 24.
 6) Open your browser and load 'http://larabook.app'
 
 ### Tests
-1) ssh into the VM. The easiest way is to run the 'vagrant ssh' command from the root directory of the project
+1) ssh into the VM by running the 'vagrant ssh' command from the root directory of the project
 2) cd to '/vagrant'
 3) Run 'vendor/bin/codecept run'
 
 ### Development
-1) ssh into the VM. The easiest way is to run the 'vagrant ssh' command from the root directory of the project
+1) ssh into the VM by running the 'vagrant ssh' command from the root directory of the project
 2) Run the 'gulp' command to compile the css
 
   [1]: http://downloads.vagrantup.com/  
